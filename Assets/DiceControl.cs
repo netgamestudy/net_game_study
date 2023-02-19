@@ -35,7 +35,8 @@ public class DiceControl : MonoBehaviour
         DiceCount++;
         if (DiceCount >= DiceNum)
         {
-            // 이 부분에서 더해진 주사위 값인 DiceSideSum 만큼 플레이어를 움직이게 함
+            MoveControl.diceSideThrown = DiceSideSum;
+            MoveControl.MovePlayer(MoveControl.whosTurn);// 이 부분에서 더해진 주사위 값인 DiceSideSum 만큼 플레이어를 움직이게 함
 
             dice1.GetComponent<Dice1>().coroutineAllowed = true;
             dice1.GetComponent<Dice1>().RollingAllowed = true;
