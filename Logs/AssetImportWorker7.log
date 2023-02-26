@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe
 -name
 AssetImportWorker7
 -projectPath
-C:/Users/user/Downloads/check/net_game_study
+C:/Users/user/Downloads/real_check/net_game_study
 -logFile
 Logs/AssetImportWorker7.log
 -srvPort
-64868
-Successfully changed project path to: C:/Users/user/Downloads/check/net_game_study
-C:/Users/user/Downloads/check/net_game_study
+51633
+Successfully changed project path to: C:/Users/user/Downloads/real_check/net_game_study
+C:/Users/user/Downloads/real_check/net_game_study
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,15 +47,15 @@ C:/Users/user/Downloads/check/net_game_study
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [8884] Host "[IP] 192.168.0.48 [Port] 0 [Flags] 2 [Guid] 1700733212 [EditorId] 1700733212 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KT8J26U) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [5868] Host "[IP] 192.168.0.48 [Port] 0 [Flags] 2 [Guid] 2157352727 [EditorId] 2157352727 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KT8J26U) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [8884] Host "[IP] 192.168.0.48 [Port] 0 [Flags] 2 [Guid] 1700733212 [EditorId] 1700733212 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KT8J26U) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [5868] Host "[IP] 192.168.0.48 [Port] 0 [Flags] 2 [Guid] 2157352727 [EditorId] 2157352727 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KT8J26U) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 430.91 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1147.73 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.16f1 (4016570cf34f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/user/Downloads/check/net_game_study/Assets
+[Subsystems] Discovering subsystems at path C:/Users/user/Downloads/real_check/net_game_study/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
@@ -67,45 +67,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56488
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56116
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.092032 seconds.
+Registered in 0.029942 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 471.94 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 3848.46 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  6.581 seconds
+- Completed reload, in 14.042 seconds
 Domain Reload Profiling:
-	ReloadAssembly (6583ms)
-		BeginReloadAssembly (795ms)
+	ReloadAssembly (14044ms)
+		BeginReloadAssembly (1627ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (3ms)
-		EndReloadAssembly (4960ms)
-			LoadAssemblies (788ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (11597ms)
+			LoadAssemblies (1620ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1091ms)
+			SetupTypeCache (927ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (318ms)
-			SetupLoadedEditorAssemblies (2859ms)
+			RebuildScriptCaches (117ms)
+			SetupLoadedEditorAssemblies (10005ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (806ms)
+				InitializePlatformSupportModulesInManaged (3579ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (472ms)
-				BeforeProcessingInitializeOnLoad (7ms)
-				ProcessInitializeOnLoadAttributes (1251ms)
-				ProcessInitializeOnLoadMethodAttributes (320ms)
+				RefreshPlugins (3849ms)
+				BeforeProcessingInitializeOnLoad (194ms)
+				ProcessInitializeOnLoadAttributes (2072ms)
+				ProcessInitializeOnLoadMethodAttributes (310ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (1ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.062753 seconds.
-Android Extension - Scanning For ADB Devices 20483 ms
+Registered in 0.056587 seconds.

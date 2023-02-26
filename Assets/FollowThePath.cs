@@ -13,7 +13,7 @@ public class FollowThePath : MonoBehaviour
     public int waypointIndex = 0;
 
     public bool moveAllowed;
-
+    public GameObject shop;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +45,18 @@ public class FollowThePath : MonoBehaviour
                 moveSpeed * Time.deltaTime);
             if (transform.position == waypoints[waypointIndex].transform.position)
             {
-                if (waypointIndex == 14)
+                if (MoveControl.role[waypointIndex] == "상점")
                 {
-                    if (MoveControl.whosTurn < 0)
+                    moveAllowed = false;
+                    shop.gameObject.SetActive(true);
+                    if (MoveControl.whosTurn > 0)
+                    {
                         Debug.Log("PL1 상점");
+                    }
                     else
+                    {
                         Debug.Log("PL2 상점");
+                    }
                 }
                 waypointIndex += 1;
                 Debug.Log((waypointIndex - 1).ToString() + " 통과");

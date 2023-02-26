@@ -6,10 +6,8 @@ using UnityEngine.UI;
 public class OwnControl : MonoBehaviour
 {
     private static GameObject player1CoinText, player2CoinText, player1StarText, player2StarText;
-    public static int PL1Coin = 0;
-    public static int PL2Coin = 0;
-    public static int PL1Star = 0;
-    public static int PL2Star = 0;
+    public static int[] CoinList = { 0, 0 };
+    public static int[] StarList = { 0, 0 };
 
     void Start()
     {
@@ -21,37 +19,28 @@ public class OwnControl : MonoBehaviour
 
     public static void GetCoin(int player, int coins)//1Àº ÆÄ¶û, 2´Â »¡°­
     {
+        CoinList[player - 1] += coins;
+        if (CoinList[player - 1] < 0)
+            CoinList[player - 1] = 0;
         if (player == 1)
-        {
-            PL1Coin += coins;
-            if (PL1Coin < 0)
-                PL1Coin = 0;
-            player1CoinText.GetComponent<Text>().text = PL1Coin.ToString();
-        }
+            player1CoinText.GetComponent<Text>().text = CoinList[0].ToString();
         else
-        {
-            PL2Coin += coins;
-            if (PL2Coin < 0)
-                PL2Coin = 0;
-            player2CoinText.GetComponent<Text>().text = PL2Coin.ToString();
-        }
+            player2CoinText.GetComponent<Text>().text = CoinList[1].ToString();
     }
 
     public static void GetStar(int player, int stars)//1Àº ÆÄ¶û, 2´Â »¡°­
     {
+        StarList[player - 1] += stars;
+        if (StarList[player - 1] < 0)
+            StarList[player - 1] = 0;
         if (player == 1)
-        {
-            PL1Star += stars;
-            if (PL1Star < 0)
-                PL1Star = 0;
-            player1StarText.GetComponent<Text>().text = ""+PL1Star.ToString();
-        }
+            player1StarText.GetComponent<Text>().text = StarList[0].ToString();
         else
-        {
-            PL2Star += stars;
-            if (PL2Star < 0)
-                PL2Star = 0;
-            player2StarText.GetComponent<Text>().text = "" + PL2Star.ToString();
-        }
+            player2StarText.GetComponent<Text>().text = StarList[1].ToString();
+    }
+
+    public static bool CheckMoney(int player, int price)
+    {
+        return CoinList[player - 1] >= price;
     }
 }

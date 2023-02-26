@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class MoveControl : MonoBehaviour
 {
-    public string[] role = {"시작점", "", "", "", "", "", "",
-                            "코인", "코인", "코인", "코인", "코인", "코인", "코인",
+    public static string[] role = {"시작점", "", "", "", "", "", "",
+                            "상점", "코인", "코인", "코인", "코인", "코인", "코인",
                             "상점", "", "", "", "", "", "",
-                            "도둑", "도둑", "도둑", "도둑", "도둑", "도둑", "도둑"};
+                            "상점", "도둑", "도둑", "도둑", "도둑", "도둑", "도둑"};
 
     private static GameObject player1MoveText, player2MoveText, turnText;
 
@@ -18,7 +18,7 @@ public class MoveControl : MonoBehaviour
     public static int player1StartWaypoint = 0;
     public static int player2StartWaypoint = 0;
 
-    public static int whosTurn = 1; //양수면 파랑, 음수면 빨강, 절대치는 턴수
+    public static int whosTurn = 1; //양수면 PL1, 음수면 PL2, 절대치는 턴수
     public static bool gameOver = false;
 
     // Start is called before the first frame update
@@ -42,7 +42,8 @@ public class MoveControl : MonoBehaviour
     void Update()
     {
         if (player1.GetComponent<FollowThePath>().waypointIndex >
-            player1StartWaypoint + diceSideThrown)
+            player1StartWaypoint + diceSideThrown
+            && player1.GetComponent<FollowThePath>().moveAllowed)
         {
             player1.GetComponent<FollowThePath>().moveAllowed = false;
             player1MoveText.gameObject.SetActive(false);
@@ -51,9 +52,11 @@ public class MoveControl : MonoBehaviour
             Debug.Log("PL1 " + player1StartWaypoint.ToString() + " 도착");
             CheckArrived(1, player1StartWaypoint);
             ChangeTurn();
+            DiceControl.ReleaseDices();
         }
         if (player2.GetComponent<FollowThePath>().waypointIndex >
-            player2StartWaypoint + diceSideThrown)
+            player2StartWaypoint + diceSideThrown
+            && player2.GetComponent<FollowThePath>().moveAllowed)
         {
             player2.GetComponent<FollowThePath>().moveAllowed = false;
             player2MoveText.gameObject.SetActive(false);
@@ -62,6 +65,7 @@ public class MoveControl : MonoBehaviour
             Debug.Log("PL2 " + player2StartWaypoint.ToString() + " 도착");
             CheckArrived(2, player2StartWaypoint);
             ChangeTurn();
+            DiceControl.ReleaseDices();
         }
         if (player1StartWaypoint + diceSideThrown > 27 && player1.GetComponent<FollowThePath>().waypointIndex == 0)
             player1StartWaypoint -= 28;
@@ -82,7 +86,7 @@ public class MoveControl : MonoBehaviour
         switch (role[arrived])
         {
             case "코인":
-                OwnControl.GetCoin(player, 10);
+                OwnControl.GetCoin(player, 100);
                 break;
             case "도둑":
                 OwnControl.GetCoin(player, -10);

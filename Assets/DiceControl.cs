@@ -29,6 +29,14 @@ public class DiceControl : MonoBehaviour
         dice2.GetComponent<Dice2>().RollingAllowed = false;
     }
 
+    public static void ReleaseDices()
+    {
+        dice1.GetComponent<Dice1>().coroutineAllowed = true;
+        dice1.GetComponent<Dice1>().RollingAllowed = true;
+        dice2.GetComponent<Dice2>().coroutineAllowed = true;
+        dice2.GetComponent<Dice2>().RollingAllowed = true;
+    }
+
     public void DiceFinished(int DiceSides)
     {
         DiceSideSum += DiceSides;
@@ -38,10 +46,6 @@ public class DiceControl : MonoBehaviour
             MoveControl.diceSideThrown = DiceSideSum;
             MoveControl.MovePlayer(MoveControl.whosTurn);// 이 부분에서 더해진 주사위 값인 DiceSideSum 만큼 플레이어를 움직이게 함
 
-            dice1.GetComponent<Dice1>().coroutineAllowed = true;
-            dice1.GetComponent<Dice1>().RollingAllowed = true;
-            dice2.GetComponent<Dice2>().coroutineAllowed = true;
-            dice2.GetComponent<Dice2>().RollingAllowed = true;
 
             DiceCount = 0;
         }
